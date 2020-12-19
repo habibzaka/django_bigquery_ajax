@@ -5,7 +5,6 @@ import json
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C://Users//HABIB//Desktop//My First Project-22f0f390b8ad.json"
 
-
 def index(request):
     return render(request, 'index.html')
 

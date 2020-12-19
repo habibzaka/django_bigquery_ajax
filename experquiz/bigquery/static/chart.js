@@ -1,4 +1,4 @@
-$(document).on('click', "button#pie, button#barvalue, button#pievalue", function(){
+$(document).on('click', "button#barvaluelicenses, button#pievaluelicenses", function(){
 var value = $(this).val();
 $.ajax({
     url: "update/",
@@ -35,18 +35,15 @@ $.ajax({
                 borderWidth: 1
             }]
         },
-    });
-    
+    });    
 })})
-
-$(document).on('click', "button#bar, button#barvalue, button#pievalue", function(){
+$(document).on('click', "button#pievaluelanguages, button#barvaluelanguages", function(){
     var value = $(this).val();
     $.ajax({
         url: "update/",
         method: "GET",
         dataType : "json",
-    })
-    
+    })  
     .done(function(response){
         var ctx = document.getElementById('myChart').getContext('2d');
         if(value == "bar")
@@ -54,7 +51,6 @@ $(document).on('click', "button#bar, button#barvalue, button#pievalue", function
         else if (value == "pie")
             var type ='pie';
         else var type ='bar';
-        
         var myChart = new Chart(ctx, {
             type: type,
             data: {
